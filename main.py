@@ -1,16 +1,15 @@
-# This is a sample Python script.
-
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+from dataset import load_hoda
+import numpy as np
+from sklearn.neighbors import KNeighborsClassifier
+import matplotlib.pyplot as plt
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+x_train,y_train,x_test,y_test = load_hoda()
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+
+model = KNeighborsClassifier(n_neighbors=3)
+model.fit(x_train,y_train)
+
+#predict new number
+pred_classes=model.predict(x_test)
+print(pred_classes)
