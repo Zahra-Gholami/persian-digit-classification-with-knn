@@ -15,7 +15,6 @@ print("دقت مدل در پیش بینی داده های تست")
 print(model.score(X_test,y_test))
 
 
-
 #نمونه از داده خارجی
 img=cv2.imread('persian-digits.jpg')
 #تبدیل gray
